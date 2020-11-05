@@ -4,7 +4,7 @@
         var button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
-    
+
     fetch("./product.json")
     .then((res) => res.json())
     .then((data) => {
@@ -15,15 +15,15 @@
         var afterDiscount = actualPrice - (actualPrice * discoutValue);
         var totalPrice = afterDiscount.toFixed(2);
         output += `
-        <div class="shop-item">
+        <div class="box">
         <span class="offer-tag">${items.discount}%</span>
             <img class="shop-item-image" src="${items.image}">
-                <div class="shop-item-details">
-                    <span class="shop-item-title">${items.name}</span>
-                    <span class="shop-item-original-price strike-out">$${items.price.actual}</span>
-                    <span class="shop-item-price totalPrice"><strong> $${totalPrice}</strong></span>
-                    <button onclick="addToCartClicked()" class="btn btn-primary shop-item-button" type="button">Add to cart</button>
-                </div>
+            <div class="shop-item-details">
+                <span class="shop-item-title">${items.name}</span><br>
+                <span class="shop-item-original-price strike-out">$${items.price.actual}</span>
+                <span class="shop-item-price totalPrice"><strong> $${totalPrice}</strong></span>
+                <button onclick="addToCartClicked()" class="btn btn-primary shop-item-button" type="button">Add to cart</button>
+            </div>
         </div>
         `;
       });
@@ -60,7 +60,7 @@
             }
         }
         var cartRowContents = `
-            <div class="cart-item cart-column">
+            <div class="cart-item cart-column box">
                 <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
                 <span class="cart-item-title">${title}</span>
                 <button class="btn btn-danger" type="button">X</button>
@@ -110,4 +110,5 @@
         
     }
 
+    
     
