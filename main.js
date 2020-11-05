@@ -4,7 +4,7 @@
         var button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
-
+    
     fetch("./product.json")
     .then((res) => res.json())
     .then((data) => {
@@ -22,7 +22,7 @@
                     <span class="shop-item-title">${items.name}</span>
                     <span class="shop-item-original-price strike-out">$${items.price.actual}</span>
                     <span class="shop-item-price totalPrice"><strong> $${totalPrice}</strong></span>
-                    <button onclick="addToCartClicked()" class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    <button onclick="addToCartClicked()" class="btn btn-primary shop-item-button" type="button">Add to cart</button>
                 </div>
         </div>
         `;
@@ -32,17 +32,16 @@
     })
 
     function addToCartClicked() {
-        console.log("item clicked");
         var button = event.target
-    var shopItem = button.parentElement.parentElement
-    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
-    var actualPrice = shopItem.getElementsByClassName('shop-item-original-price')[0].innerText
-    var price = shopItem.getElementsByClassName('totalPrice')[0].innerText
-    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
-    addItemToCart(title, price, imageSrc,actualPrice)
-    updateCartTotal()
+        var shopItem = button.parentElement.parentElement
+        var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+        var actualPrice = shopItem.getElementsByClassName('shop-item-original-price')[0].innerText
+        var price = shopItem.getElementsByClassName('totalPrice')[0].innerText
+        var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+        addItemToCart(title, price, imageSrc,actualPrice)
+        updateCartTotal()
     }
-    
+
     function removeCartItem(event) {
         var buttonClicked = event.target
         buttonClicked.parentElement.parentElement.remove()
