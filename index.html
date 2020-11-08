@@ -7,27 +7,25 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h2 class="headerBar">All Items</h2>
+    <h2 class="main-header">All Items</h2>
     <section class="top-container">
-        <header class="showcase boxes" id="output"></header>
-    
-    <div class="checkout">
-        <section class="container content-section">
-            <div class="cart-row">
-                <span class="cart-item-header cart-header cart-column">Item</span>
-                <span class="cart-price cart-header cart-column">Qty</span>
-                <span class="cart-quantity cart-header cart-column">Price</span>
+        <header class="products-container" id="productsList"></header>
+        <div class="cart-container">
+            <div class="cart-header">
+                <span>Item</span>
+                <span>Qty</span>
+                <span>Price</span>
             </div>
-            <div class="cart-items">
-            </div>
-            <div class="cart-total" style="line-height: 2rem;">
+            <div class="cart-details"></div>
+            <div class="order-details">
                 <strong class="">Total</strong><br>
                 <strong>Items Total:&nbsp;&nbsp;</strong><span class="cart-total-price"></span><br>
                 <strong>Discount:&nbsp;&nbsp;</strong><span class="cart-total-discout"></span><br>
-                <strong>Order Total:&nbsp;&nbsp;</strong><span class="cart-order-total"></span>
+                <p class="order-details__order-total"><strong>Order Total:&nbsp;&nbsp;</strong><span class="order-details__cart-order-total"></span></p>
             </div>
-        </section>
-    </div>
+        </div>
+        <div class="checkout-container"></div>
+    </section>
 </body>
 <script src="main.js"></script>
 </html>
